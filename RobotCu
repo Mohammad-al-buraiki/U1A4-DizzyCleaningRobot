@@ -1,0 +1,42 @@
+import becker.robots.City;
+import becker.robots.Direction;
+import becker.robots.Robot; //import the becker library
+
+/**
+ * RobotTask
+ * Picks up all beepers in the different rows
+
+ */
+
+public class RobotTask {
+
+
+	/**
+	 * description
+	 * @param none
+	 * @return void
+	 */
+	public void run(){
+
+		//build a city
+		City grid = new City("U1DizzyWorld.txt");
+		grid.showThingCounts(true); //shows # of things on each corner
+
+
+		//clear the grid!
+		RobotCu RC = new RobotCu (grid,1,1,Direction.SOUTH,0);
+
+		RC.moves();
+		RC.reNorth();
+		RC.moves();
+		RC.reSouth();
+		RC.moves();
+		RC.reNorth();
+		RC.moves();
+		RC.reSouth();
+		RC.moves();
+
+
+		System.out.println("finished");
+	}
+}
