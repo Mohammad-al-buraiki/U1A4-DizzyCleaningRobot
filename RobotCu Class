@@ -1,0 +1,46 @@
+import becker.robots.City;
+import becker.robots.Direction;
+import becker.robots.RobotSE;
+
+public class RobotCu extends RobotSE {
+
+	public RobotCu(City arg0, int arg1, int arg2, Direction arg3, int arg4) {
+		super(arg0, arg1, arg2, arg3, arg4);
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public void moves() {
+		// TODO Auto-generated method stub
+		for (int i=0;i<16;i++) {
+
+			for (int i1=0;i1<getAvenue();i1++) {
+				super.pickThing();
+			}
+			for (int i11=0;i11<getAvenue();i11++) {
+				super.turnLeft();
+				super.turnLeft();
+				super.turnLeft();
+				super.turnLeft();
+			}
+			super.move();
+		}
+	}
+
+	public void reNorth() {
+		// TODO Auto-generated method stub
+		super.turnLeft();
+		move();
+		super.turnLeft();
+		move();
+	}
+
+	public void reSouth() {
+		// TODO Auto-generated method stub
+		super.turnRight();
+		move();
+		super.turnRight();
+		move();
+	}
+
+}
